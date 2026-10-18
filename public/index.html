@@ -1,51 +1,305 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F6F3EC">
 <title>佛罗伦萨 · 罗马 旅行手册</title>
 <style>
-:root{--bg:#eef2f4;--paper:#fbfcfc;--ink:#1b2a41;--mute:#5d6b7c;--line:#cdd6dd;--warn:#b3261e;
---d1:#d1495b;--d2:#2e86ab;--d3:#e09f1f;--d4:#6a994e;--d5:#7b4b94;--d6:#0f8b8d;--d7:#8a5a44;--d8:#3d5a80}
-@media(prefers-color-scheme:dark){:root{--bg:#10171f;--paper:#17212c;--ink:#e6ecf1;--mute:#93a1b0;--line:#2b3947;--warn:#ff8a80}}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Iowan Old Style",Georgia,"Songti SC","Noto Serif CJK SC",serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-main{max-width:640px;margin:0 auto;padding:20px 16px 60px}
-h1{font-size:30px;line-height:1.2;margin:18px 0 4px;letter-spacing:.02em}
-h2{font-size:21px;margin:40px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
-.sub{color:var(--mute);margin:0}
-.hand{font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive}
-a{color:inherit;text-decoration-color:var(--mute);text-underline-offset:3px}
-.map{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px}
-.map svg{width:100%;height:auto;display:block}
-.leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;margin:10px 2px 0}
-.leg i{display:inline-block;width:18px;height:4px;border-radius:2px;margin-right:6px;vertical-align:middle}
-.card{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:4px;padding:10px 14px;margin:10px 0}
-.card b{display:block}.card small{color:var(--mute);display:block}
-.empty{color:var(--mute);font-style:italic}
-.day{background:var(--paper);border:1px solid var(--line);border-radius:6px;margin:16px 0;overflow:hidden}
-.day>header{padding:12px 14px;border-top:5px solid var(--c)}
-.day h3{margin:0;font-size:18px}
-.day details{border-top:1px dashed var(--line)}
-.day summary{cursor:pointer;padding:9px 14px;font-size:15px;color:var(--mute)}
-.day summary:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--c,var(--ink));outline-offset:2px}
-.day details[open] summary{color:var(--ink)}
-.dm{padding:0 14px 10px}.dm svg{width:100%;height:auto}
-.go{display:inline-block;margin:2px 0 8px;padding:8px 14px;border:2px solid var(--c);border-radius:20px;font-weight:700;text-decoration:none}
-.row{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
-.t{font-variant-numeric:tabular-nums;font-weight:700;line-height:1.3}
-.t em{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--mute)}
-.row p{margin:2px 0 0;color:var(--mute);font-size:15px}
-.book{display:inline-block;font-size:13px;font-weight:700;color:var(--warn);border:1px solid var(--warn);border-radius:3px;padding:0 6px;margin-left:6px}
-ul{padding-left:20px}li{margin:6px 0}
-.risk{border-left-color:var(--warn)}
-</style></head><body><main>
-<h1 class="hand">佛罗伦萨 · 罗马</h1>
-<p class="sub">2026年11月24日（周二）– 12月1日（周二）· 意大利当地时间 CET（UTC+1）</p>
+  :root{
+    --bg:#F6F3EC; --panel:#FFFFFF; --panel2:#FBF8F0;
+    --ink:#211E1A; --ink2:#585349; --ink3:#8D8777;
+    --line:#E6E0D0; --accent:#B5622E; --accent-bg:#F1E3D6;
+    --star:#B5622E; --tk:#8D8777;
+    --land:#E9E4CE; --land-line:#CFC79F;
+    --r2:#3E8E86; --r3:#8B5FA3; --d1:#D1495B; --d2:#2E86AB; --d3:#E09F1F; --d4:#6A994E; --d5:#7B4B94; --d6:#0F8B8D; --d7:#8A5A44; --d8:#3D5A80;
+    --sky-top:#CFE7EE; --sky-bottom:#FBE0C3; --scene-fig:#5B4A63; --scene-sun:#F6B35C; --scene-moon:#F3ECD9;
+    --shadow:0 1px 2px rgba(30,25,15,.05), 0 8px 22px rgba(30,25,15,.06);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#181613; --panel:#211E1A; --panel2:#252119;
+      --ink:#F1EDE3; --ink2:#C9C3B4; --ink3:#8D8777;
+      --line:#3A3529; --accent:#E08A55; --accent-bg:#3A2A1C;
+      --star:#E08A55; --tk:#8D8777;
+      --land:#2B2A20; --land-line:#453F2C;
+      --r2:#6FBBB2; --r3:#B98FD1; --d1:#EE7384; --d2:#66B6D6; --d3:#F0BE5A; --d4:#93C275; --d5:#B58BCB; --d6:#53C0C2; --d7:#C79479; --d8:#86A3CC;
+      --sky-top:#1D1830; --sky-bottom:#453655; --scene-fig:#120D1A; --scene-moon:#F3ECD9;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#181613; --panel:#211E1A; --panel2:#252119;
+    --ink:#F1EDE3; --ink2:#C9C3B4; --ink3:#8D8777;
+    --line:#3A3529; --accent:#E08A55; --accent-bg:#3A2A1C;
+    --star:#E08A55; --tk:#8D8777;
+    --land:#2B2A20; --land-line:#453F2C;
+    --r2:#6FBBB2; --r3:#B98FD1;
+    --sky-top:#1D1830; --sky-bottom:#453655; --scene-fig:#120D1A; --scene-moon:#F3ECD9;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 22px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:15.5px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 0 60px;}
+  a{color:inherit;}
+  h1,h2,h3{margin:0; text-wrap:balance;}
 
-<h2>行程总览</h2>
-<div class="map"><svg viewBox="0 0 300 330" role="img" aria-label="佛罗伦萨到罗马路线总览">
+  /* ---- hero ---- */
+  /* ---- hero scene 插画 ---- */
+  .hero-scene{margin:0; line-height:0;}
+  .hero-scene svg{display:block; width:100%; height:auto;}
+  .scene-cloud{fill:#FFFFFF; opacity:.7;}
+  .scene-ridge{fill:var(--scene-fig); opacity:.3;}
+  .scene-fig{fill:var(--scene-fig);}
+  .scene-fig line{stroke:var(--scene-fig); stroke-width:2;}
+  .scene-torii path,.scene-torii rect{fill:var(--scene-fig);}
+  .sun-ico{fill:var(--scene-sun);}
+  .moon-ico{fill:var(--scene-moon); display:none;}
+  .star-ico{fill:var(--scene-moon); opacity:.8; display:none;}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .sun-ico{display:none;}
+    :root:not([data-theme="light"]) .moon-ico,:root:not([data-theme="light"]) .star-ico{display:block;}
+    :root:not([data-theme="light"]) .scene-cloud{opacity:.15;}
+  }
+  :root[data-theme="dark"] .sun-ico{display:none;}
+  :root[data-theme="dark"] .moon-ico,:root[data-theme="dark"] .star-ico{display:block;}
+  :root[data-theme="dark"] .scene-cloud{opacity:.15;}
+
+  .hero{padding:28px 18px 18px;}
+  .hero .eyebrow{font-size:12px; font-weight:700; letter-spacing:.1em; color:var(--accent); text-transform:uppercase;}
+  .hero h1{font-size:26px; font-weight:800; margin-top:6px;}
+  .hero .meta{margin-top:6px; font-size:13px; color:var(--ink2);}
+  .badges{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;}
+  .badge{font-size:12px; padding:4px 9px; border-radius:99px; background:var(--panel2); border:1px solid var(--line); color:var(--ink2);}
+  .badge.ok{color:var(--accent); border-color:var(--accent-bg); background:var(--accent-bg);}
+
+  /* ---- NOW card ---- */
+  .now{margin:0 18px 18px; padding:16px 16px 14px; background:var(--panel); border:1px solid var(--line);
+    border-radius:14px; box-shadow:var(--shadow);}
+  .now .tag{display:flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; letter-spacing:.08em;
+    color:var(--accent); text-transform:uppercase;}
+  .now .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
+  .now .title{font-size:17px; font-weight:700; margin-top:8px;}
+  .now .sub{font-size:12.5px; color:var(--ink3); margin-top:2px;}
+  .now .cd{font-variant-numeric:tabular-nums; font-size:22px; font-weight:800; margin-top:10px; letter-spacing:.01em;}
+  .now .todo-link{display:block; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);
+    font-size:12.5px; color:var(--ink2); text-decoration:none;}
+  .now .todo-link b{color:var(--accent);}
+
+  /* ---- sticky nav ---- */
+  .nav{position:sticky; top:0; z-index:10; display:flex; gap:14px; overflow-x:auto;
+    padding:10px 18px; background:var(--bg); border-bottom:1px solid var(--line); font-size:13px;}
+  .nav a{white-space:nowrap; text-decoration:none; color:var(--ink2); font-weight:600;}
+
+  section{padding:22px 18px 4px;}
+  .sec{font-size:18px; font-weight:800; margin-bottom:12px; display:flex; align-items:baseline; gap:8px;}
+  .sec-sub{font-size:12.5px; color:var(--ink3); margin:-8px 0 14px;}
+
+  /* ---- overview ---- */
+  .route-fig{margin:0;}
+  .route-svg{width:100%; height:auto; display:block; background:var(--panel); border:1px solid var(--line);
+    border-radius:14px; padding:10px; box-shadow:var(--shadow);}
+  .route-svg .land{fill:var(--land); stroke:var(--land-line); stroke-width:2;}
+  .route-svg .compass line,.route-svg .compass path{stroke:var(--ink3); fill:var(--ink3);}
+  .route-svg .compass text{font-size:11px; font-weight:700; fill:var(--ink3);}
+  .route-svg .flight-ln{stroke:currentColor; stroke-width:1.6; stroke-dasharray:1 5; opacity:.5; fill:none;}
+  .route-svg .flight-lbl{font-size:9.5px; fill:currentColor; opacity:.6;}
+  .route-svg .route{fill:none; stroke-width:3; stroke-linecap:round;}
+  .route-svg .route.r1{stroke:var(--accent);}
+  .route-svg .route.r2{stroke:var(--r2);}
+  .route-svg .route.r3{stroke:var(--r3);}
+  .route-svg .node-halo{fill:var(--panel); opacity:.92;}
+  .route-svg .node{fill:var(--accent);}
+  .route-svg .node.r2{fill:var(--r2);}
+  .route-svg .node-ring{fill:none; stroke:var(--accent); stroke-width:1.5; opacity:.4;}
+  .route-svg .node-day{fill:currentColor; opacity:.6;}
+  .route-svg .node-name{font-size:13px; font-weight:700; fill:currentColor;}
+  .route-svg .node-meta{font-size:9.5px; fill:currentColor; opacity:.65;}
+  .route-fig figcaption{margin-top:10px; font-size:11.5px; color:var(--ink3); line-height:1.6;}
+  .legend{margin-top:12px; display:flex; flex-direction:column; gap:7px; font-size:12.5px; color:var(--ink2);}
+  .legend .ln{display:inline-block; width:18px; height:0; border-top:3px solid var(--accent); margin-right:8px; vertical-align:2px;}
+  .legend .ln.r2{border-top-color:var(--r2);}
+  .legend .ln.r3{border-top-color:var(--r3);}
+  .legend .ln.flight{border-top:0; border-bottom:2px dashed var(--ink3); height:1px; opacity:.7;}
+
+  /* ---- cards (flights) ---- */
+  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px;
+    box-shadow:var(--shadow); margin-bottom:10px;}
+  .flight .rt{display:flex; justify-content:space-between; align-items:baseline; font-size:15px; font-weight:700;}
+  .flight .det{font-size:12.5px; color:var(--ink2); margin-top:4px;}
+
+  /* ---- day cards ---- */
+  .card.day{padding:0; overflow:hidden;}
+  .day-head{display:flex; align-items:center; gap:12px; padding:14px 16px; cursor:pointer; user-select:none;}
+  .day-num{display:flex; flex-direction:column; align-items:center; line-height:1.1; flex:none;}
+  .day-num .d{font-size:17px; font-weight:800;}
+  .day-num .w{font-size:10.5px; color:var(--ink3);}
+  .day-title{font-size:14.5px; font-weight:700;}
+  .day-route{font-size:12px; color:var(--ink3); margin-top:2px;}
+  .day-toggle{margin-left:auto; flex:none; width:22px; height:22px; display:flex; align-items:center;
+    justify-content:center; color:var(--ink3); font-size:13px; transition:transform .2s;}
+  .card.day.collapsed .day-toggle{transform:rotate(-90deg);}
+  .card.day.collapsed .daymap,.card.day.collapsed .day-body{display:none;}
+
+  .daymap-bar{display:flex; align-items:center; gap:10px; padding:0 16px 10px; flex-wrap:wrap;}
+  .dm-toggle{font-size:12px; font-weight:600; color:var(--accent); background:var(--accent-bg); border:0;
+    border-radius:99px; padding:5px 11px; cursor:pointer;}
+  .dm-note{font-size:11.5px; color:var(--ink3);}
+  .dm-go{margin-left:auto; font-size:12px; color:var(--ink2); text-decoration:none;}
+  .dm-frame{display:block;}
+  .dm-frame iframe{width:100%; height:220px; border:0; display:block;}
+
+  .day-body{padding:4px 16px 14px; border-top:1px solid var(--line);}
+  .tl{display:flex; gap:12px; padding:10px 0; border-bottom:1px dashed var(--line);}
+  .tl:last-child{border-bottom:0;}
+  .tl .t{flex:none; width:42px; font-size:12px; font-weight:700; color:var(--ink3); padding-top:1px;}
+  .tl .tx{font-size:13.5px;}
+  .tl small{display:block; margin-top:3px; font-size:12px; color:var(--ink2); line-height:1.55;}
+  .tl-gap{display:flex; align-items:center; gap:12px; padding:3px 0;}
+  .tl-gap .gt{flex:none; width:42px; display:flex; justify-content:center;}
+  .tl-gap .gt::before{content:''; width:1px; height:18px; background:var(--line);}
+  .tl-gap .chip{font-size:11px; color:var(--ink3); background:var(--panel2); border:1px solid var(--line);
+    border-radius:99px; padding:3px 11px;}
+  .pin{color:var(--accent); text-decoration:underline dotted; text-underline-offset:2px;}
+  .tag{display:inline-block; font-size:10.5px; font-weight:700; padding:1px 7px; border-radius:99px; margin-left:4px;}
+  .tag.star{background:var(--accent-bg); color:var(--accent);}
+  .tag.tk{background:var(--panel2); color:var(--tk); border:1px solid var(--line);}
+
+  .info-btn{font-family:inherit; font-size:11px; line-height:1; font-weight:700; color:var(--accent);
+    background:var(--accent-bg); border:0; border-radius:50%; width:17px; height:17px; padding:0;
+    margin-left:3px; cursor:pointer; vertical-align:2px;}
+  .info-btn[aria-expanded="true"]{background:var(--accent); color:var(--panel);}
+  .info-panel{margin-top:6px; padding:8px 10px; background:var(--panel2); border-radius:9px;
+    font-size:12px; line-height:1.6; color:var(--ink2);}
+  .info-panel p{margin:0;}
+
+  .tl.hotel .tx{color:var(--ink2);}
+  .tl.hotel b{color:var(--ink);}
+  .tl.hotel .sub{display:block; margin-top:3px; font-size:12px; color:var(--ink3); line-height:1.6;}
+
+  /* ---- todo ---- */
+  .prog{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .bar{flex:1; height:6px; border-radius:99px; background:var(--panel2); overflow:hidden;}
+  .bar i{display:block; height:100%; width:0%; background:var(--accent); transition:width .3s;}
+  .prog .n{font-size:12px; font-weight:700; color:var(--ink2); flex:none;}
+  .todo-group h3{font-size:13px; color:var(--ink3); margin:16px 0 8px;}
+  .todo-group h3:first-child{margin-top:0;}
+  .todo{display:flex; gap:10px; padding:9px 0; border-bottom:1px dashed var(--line);}
+  .todo:last-child{border-bottom:0;}
+  .box{flex:none; width:20px; height:20px; margin-top:1px; border-radius:6px; border:1.5px solid var(--line);
+    background:var(--panel); color:var(--panel); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+  .box svg{width:13px; height:13px; opacity:0;}
+  .todo.done .box{background:var(--accent); border-color:var(--accent); color:var(--panel);}
+  .todo.done .box svg{opacity:1;}
+  .todo .body{flex:1; min-width:0;}
+  .todo .body .name{font-size:13.5px; font-weight:600;}
+  .todo.done .body .name{color:var(--ink3); text-decoration:line-through;}
+  .todo .det{font-size:12px; color:var(--ink2); margin-top:3px; line-height:1.55;}
+
+  /* ---- 共享待办（可选同步）---- */
+  .todo-sync-note{font-size:11.5px; color:var(--ink3); margin:2px 0 10px;}
+  .todo-sync-note.off{color:var(--tk);}
+  .todo.custom .body .name{outline:0; cursor:text; border-radius:4px; padding:1px 3px; margin:-1px -3px;}
+  .todo.custom .body .name:focus{background:var(--panel2);}
+  .todo.custom .del{flex:none; align-self:flex-start; border:0; background:none; color:var(--ink3);
+    font-size:13px; cursor:pointer; padding:2px 4px;}
+  .todo.custom .del:hover{color:var(--accent);}
+  .todo-add{display:flex; gap:8px; margin-top:10px;}
+  .todo-add input{flex:1; min-width:0; font:inherit; font-size:13px; padding:8px 10px; border-radius:9px;
+    border:1px solid var(--line); background:var(--panel2); color:var(--ink);}
+  .todo-add button{flex:none; font:inherit; font-size:13px; font-weight:600; padding:8px 14px; border-radius:9px;
+    border:0; background:var(--accent); color:#fff; cursor:pointer;}
+
+  ul.tips{margin:0; padding-left:18px; font-size:13px; color:var(--ink2); line-height:1.8;}
+
+  footer{padding:24px 18px 36px; font-size:11.5px; color:var(--ink3); border-top:1px solid var(--line); margin-top:10px;}
+  .t small.tz{display:block;font-size:10px;font-weight:400;color:var(--ink3);line-height:1.3}
+  .legend .ln{border-top-width:4px}
+  .todo-list{margin:0;padding-left:20px;line-height:1.9;font-size:14.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <figure class="hero-scene">
+    <svg viewBox="0 0 800 240" role="img" aria-label="佛罗伦萨主教堂、斗兽场与柏树剪影组成的意大利主题插画">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" style="stop-color:var(--sky-top)"/>
+          <stop offset="100%" style="stop-color:var(--sky-bottom)"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="800" height="240" fill="url(#skyGrad)"/>
+
+      <g class="scene-cloud">
+        <g transform="translate(230,48)"><ellipse cx="0" cy="0" rx="26" ry="13"/><ellipse cx="22" cy="4" rx="20" ry="11"/><ellipse cx="-20" cy="5" rx="18" ry="10"/></g>
+        <g transform="translate(470,34)"><ellipse cx="0" cy="0" rx="24" ry="12"/><ellipse cx="20" cy="4" rx="18" ry="10"/><ellipse cx="-18" cy="4" rx="16" ry="9"/></g>
+        <g transform="translate(660,58)"><ellipse cx="0" cy="0" rx="22" ry="11"/><ellipse cx="18" cy="4" rx="16" ry="9"/></g>
+      </g>
+
+      <circle class="sun-ico" cx="120" cy="54" r="29"/>
+      <g class="moon-ico">
+        <path d="M118,30 a26,26 0 1 0 2,48 a21,21 0 1 1 -2,-48 Z"/>
+      </g>
+      <g class="star-ico">
+        <circle cx="330" cy="30" r="2"/><circle cx="560" cy="24" r="1.6"/>
+        <circle cx="610" cy="46" r="2.2"/><circle cx="200" cy="22" r="1.6"/><circle cx="420" cy="60" r="1.8"/>
+      </g>
+
+      <path class="scene-ridge" d="M0,172 L90,122 L180,157 L270,112 L370,162 L460,127 L560,167 L660,132 L760,162 L800,147 L800,240 L0,240 Z"/>
+
+      <g class="scene-fig"><rect x="130" y="172" width="130" height="39"/><rect x="160" y="150" width="70" height="24"/><path d="M156,152 Q195,86 234,152 Z"/><rect x="190" y="84" width="10" height="14"/><line x1="195" y1="84" x2="195" y2="70"/><line x1="189" y1="76" x2="201" y2="76"/><rect x="276" y="112" width="22" height="99"/><rect x="272" y="104" width="30" height="10"/></g>
+<g class="scene-fig"><path d="M410,211 L410,168 Q490,146 570,168 L570,211 Z"/></g>
+<g style="fill:var(--sky-bottom);opacity:.5"><rect x="424" y="178" width="9" height="14" rx="4"/><rect x="442" y="175" width="9" height="14" rx="4"/><rect x="460" y="173" width="9" height="14" rx="4"/><rect x="478" y="172" width="9" height="14" rx="4"/><rect x="496" y="172" width="9" height="14" rx="4"/><rect x="514" y="173" width="9" height="14" rx="4"/><rect x="532" y="175" width="9" height="14" rx="4"/><rect x="424" y="196" width="9" height="13" rx="4"/><rect x="460" y="193" width="9" height="16" rx="4"/><rect x="496" y="192" width="9" height="17" rx="4"/><rect x="532" y="195" width="9" height="14" rx="4"/></g>
+<g class="scene-fig"><ellipse cx="632" cy="178" rx="9" ry="34"/><ellipse cx="656" cy="186" rx="8" ry="28"/><ellipse cx="680" cy="180" rx="9" ry="32"/></g>
+
+<g class="scene-fig">
+        <circle cx="26" cy="172" r="40"/><circle cx="60" cy="192" r="30"/>
+        <rect x="38" y="196" width="10" height="28"/>
+        <circle cx="774" cy="176" r="38"/><circle cx="742" cy="196" r="28"/>
+        <rect x="752" y="198" width="10" height="26"/>
+      </g>
+
+      <rect class="scene-fig" x="0" y="216" width="800" height="24"/>
+    </svg>
+  </figure>
+
+  <header class="hero">
+    <div class="eyebrow">TRAVEL BOOK · 意大利</div>
+    <h1>🏛️ 佛罗伦萨 · 罗马</h1>
+    <div class="meta">2026.11.24 – 12.01 · 人数待定 · 全部时间为意大利当地时间（UTC+1）</div>
+    <div class="badges">
+      <span class="badge">✈️ 机票待补</span>
+      <span class="badge">🏨 酒店待补</span>
+      <span class="badge">🎫 门票 0/6</span>
+    </div>
+  </header>
+
+  <div class="now">
+    <div class="tag"><span class="dot"></span>此刻关注 · NOW</div>
+    <div class="title" id="nowTitle">—</div>
+    <div class="sub" id="nowMeta"></div>
+    <div class="cd" id="nowCd">—</div>
+  </div>
+
+  <nav class="nav">
+    <a href="#overview">总览</a>
+    <a href="#flights">预订</a>
+    <a href="#days">每日行程</a>
+    <a href="#todo">待办清单</a>
+    <a href="#tips">贴士</a>
+  </nav>
+
+  <section id="overview">
+    <h2 class="sec">🗺️ 行程总览</h2>
+    <div class="sec-sub">佛罗伦萨住 4 晚，11/28 高铁去罗马住 3 晚</div>
+<figure class="route-fig"><svg class="route-svg" viewBox="0 0 300 330" role="img" aria-label="意大利地图：佛罗伦萨、锡耶纳与罗马的路线">
 <defs><filter id="w"><feTurbulence baseFrequency=".03" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.5"/></filter></defs>
 <g filter="url(#w)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path d="M70 20 C110 10 150 25 190 45 C215 60 230 75 225 95 C215 115 235 135 255 160 C270 180 280 205 270 225 C255 235 240 225 225 215 C200 220 190 245 185 270 C195 290 215 300 235 315 C215 322 190 318 175 300 C155 280 135 265 120 240 C105 215 90 195 80 170 C65 140 40 120 30 95 C35 60 45 35 70 20Z" stroke="var(--mute)" stroke-width="2" fill="var(--bg)"/>
+<path d="M70 20 C110 10 150 25 190 45 C215 60 230 75 225 95 C215 115 235 135 255 160 C270 180 280 205 270 225 C255 235 240 225 225 215 C200 220 190 245 185 270 C195 290 215 300 235 315 C215 322 190 318 175 300 C155 280 135 265 120 240 C105 215 90 195 80 170 C65 140 40 120 30 95 C35 60 45 35 70 20Z" stroke="var(--land-line)" stroke-width="2" fill="var(--land)"/>
 <path d="M142 118c-8-10 6-24 18-18s10 20-2 24-14-2-16-6" stroke="var(--d1)" stroke-width="4"/>
 <path d="M132 124c10 12 34 12 44 0" stroke="var(--d2)" stroke-width="4"/>
 <path d="M154 134C150 148 145 158 140 168" stroke="var(--d3)" stroke-width="4" stroke-dasharray="8 5"/>
@@ -54,109 +308,172 @@ ul{padding-left:20px}li{margin:6px 0}
 <path d="M170 208c12-10 28-4 24 10s-22 18-30 6" stroke="var(--d6)" stroke-width="4"/>
 <path d="M166 222c-8 14 6 26 22 22" stroke="var(--d7)" stroke-width="4"/>
 <path d="M184 206c14 4 18 18 8 28" stroke="var(--d8)" stroke-width="4" stroke-dasharray="1 8"/></g>
-<g class="hand" font-size="14" fill="var(--ink)">
-<circle cx="156" cy="126" r="7" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/><text x="168" y="104">佛罗伦萨</text><text x="168" y="120" font-size="11" fill="var(--mute)">住 11/24–11/28</text>
-<circle cx="178" cy="216" r="7" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/><text x="196" y="236">罗马</text><text x="196" y="251" font-size="11" fill="var(--mute)">住 11/28–12/1</text><circle cx="140" cy="168" r="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/><text x="58" y="172">锡耶纳</text></g></svg></div>
-<div class="leg"><span><i style="background:var(--d1)"></i>周二 抵达</span><span><i style="background:var(--d2)"></i>周三 佛罗伦萨</span><span><i style="background:var(--d3)"></i>周四 锡耶纳</span><span><i style="background:var(--d4)"></i>周五 佛罗伦萨</span><span><i style="background:var(--d5)"></i>周六 火车</span><span><i style="background:var(--d6)"></i>周日 罗马</span><span><i style="background:var(--d7)"></i>周一 罗马</span><span><i style="background:var(--d8)"></i>周二 返程</span></div>
+<g fill="var(--ink)" font-size="13" font-weight="700">
+<circle cx="156" cy="126" r="7" fill="var(--panel)" stroke="var(--ink)" stroke-width="2.5"/><text x="168" y="104">佛罗伦萨</text><text x="168" y="119" font-size="10" font-weight="400" fill="var(--ink3)">住 11/24–11/28</text>
+<circle cx="178" cy="216" r="7" fill="var(--panel)" stroke="var(--ink)" stroke-width="2.5"/><text x="196" y="236">罗马</text><text x="196" y="250" font-size="10" font-weight="400" fill="var(--ink3)">住 11/28–12/01</text>
+<circle cx="140" cy="168" r="5" fill="var(--panel)" stroke="var(--ink)" stroke-width="2.5"/><text x="70" y="172">锡耶纳</text></g></svg>
+<figcaption>地形为简化示意，不代表精确边界；实际路线请以当天 Google 地图导航为准。</figcaption></figure>
+<div class="legend"><div><span class="ln" style="border-top-color:var(--d1)"></span>11/24 周二 抵达佛罗伦萨</div><div><span class="ln" style="border-top-color:var(--d2)"></span>11/25 周三 佛罗伦萨</div><div><span class="ln" style="border-top-color:var(--d3)"></span>11/26 周四 锡耶纳往返（大巴约 1.5 小时）</div><div><span class="ln" style="border-top-color:var(--d4)"></span>11/27 周五 佛罗伦萨</div><div><span class="ln" style="border-top-color:var(--d5)"></span>11/28 周六 高铁到罗马（约 1.5 小时）</div><div><span class="ln" style="border-top-color:var(--d6)"></span>11/29 周日 罗马</div><div><span class="ln" style="border-top-color:var(--d7)"></span>11/30 周一 罗马</div><div><span class="ln" style="border-top-color:var(--d8)"></span>12/01 周二 返程</div></div>
+  </section>
 
-<h2>已确认预订</h2>
-<div id="bk"></div>
+  <section id="flights">
+    <h2 class="sec">🎟️ 已确认预订</h2>
+    <div class="card"><div class="det">机票、酒店、门票、火车票订好后会列在这里，写清时间和地址。确认号、证件号、房间号不会写进页面。</div></div>
+  </section>
 
-<h2>逐日行程</h2>
-<div id="days"></div>
+  <section id="days">
+    <h2 class="sec">📅 每日行程</h2>
+<div class="sec-sub">左边是意大利当地时间；如果你不在意大利，下面会多显示一行你所在时区的时间。</div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.24</span><span class="w">周二</span></div><div style="flex:1"><div class="day-title">抵达佛罗伦萨</div><div class="day-route">步行 · 全天老城区内</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Firenze+Santa+Maria+Novella+train+station&daddr=Ponte+Vecchio+Florence+to:Mercato+Centrale+Firenze&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 3 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Firenze%20Santa%20Maria%20Novella%20train%20station&destination=Mercato%20Centrale%20Firenze&waypoints=Ponte%20Vecchio%20Florence" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-24T15:00:00+01:00">15:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Firenze%20Santa%20Maria%20Novella%20train%20station" target="_blank" rel="noopener">入住酒店，放行李</a> <small>抵达时间要等机票确认，这里先按下午估计；到了先放行李，不急着赶景点</small></div></div>
+<div class="tl"><span class="t" data-iso="2026-11-24T17:30:00+01:00">17:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Ponte%20Vecchio%20Florence" target="_blank" rel="noopener">老桥与阿诺河畔</a> <span class="tag star">⭐ 值得去</span><small>金店挂满桥面的中世纪老桥，傍晚河面的光线最好看</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 20 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-24T19:30:00+01:00">19:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Mercato%20Centrale%20Firenze" target="_blank" rel="noopener">Mercato Centrale 晚餐</a> <small>美食广场形式，选择多，适合刚到、不想排队订位的第一晚</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜1 · 佛罗伦萨酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.25</span><span class="w">周三</span></div><div style="flex:1"><div class="day-title">佛罗伦萨艺术日</div><div class="day-route">步行 · 老城区</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Galleria+dell%27Accademia+Florence&daddr=Piazza+del+Duomo+Florence+to:Uffizi+Gallery+Florence+to:Piazzale+Michelangelo+Florence&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 4 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Galleria%20dell%27Accademia%20Florence&destination=Piazzale%20Michelangelo%20Florence&waypoints=Piazza%20del%20Duomo%20Florence%7CUffizi%20Gallery%20Florence" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-25T08:30:00+01:00">08:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Galleria%20dell%27Accademia%20Florence" target="_blank" rel="noopener">学院美术馆（大卫像）</a><button class="info-btn" type="button" data-target="info-david" aria-expanded="false" aria-label="学院美术馆（大卫像）简介">ⓘ</button> <span class="tag tk">🎫 需提前订</span><small>第一个时段人最少，先看大卫再去别处；这里需要预约时段票</small><div class="info-panel" id="info-david" hidden><p>学院美术馆收藏米开朗基罗的《大卫》原作，完成于1504年，高约5.17米。馆内规模不大，1.5到2小时足够。</p></div></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 10 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-25T11:00:00+01:00">11:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Piazza%20del%20Duomo%20Florence" target="_blank" rel="noopener">圣母百花大教堂与广场</a> <span class="tag star">⭐ 值得去</span><small>外立面是粉绿白三色大理石，进主教堂免费但常排队；穹顶明天另约</small></div></div>
+<div class="tl"><span class="t" data-iso="2026-11-25T14:00:00+01:00">14:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Uffizi%20Gallery%20Florence" target="_blank" rel="noopener">乌菲兹美术馆</a> <span class="tag tk">🎫 需提前订</span><small>波提切利《维纳斯的诞生》所在地，旺季常卖光，务必提前订</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 10 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-25T17:00:00+01:00">17:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Piazzale%20Michelangelo%20Florence" target="_blank" rel="noopener">米开朗基罗广场看日落</a> <span class="tag star">⭐ 值得去</span><small>俯瞰全城的高地，11月日落约在 16:45，建议提前到；上去走坡路约 25 分钟，也可坐12路公交</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜2 · 佛罗伦萨酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.26</span><span class="w">周四</span></div><div style="flex:1"><div class="day-title">锡耶纳一日游</div><div class="day-route">大巴往返 · 约 1.5 小时</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Autostazione+Firenze+Busitalia&daddr=Piazza+del+Campo+Siena+to:Siena+bus+station+Piazza+Gramsci&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 3 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&origin=Autostazione%20Firenze%20Busitalia&destination=Siena%20bus%20station%20Piazza%20Gramsci&waypoints=Piazza%20del%20Campo%20Siena" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-26T08:30:00+01:00">08:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Autostazione%20Firenze%20Busitalia" target="_blank" rel="noopener">佛罗伦萨 → 锡耶纳（大巴）</a> <small>大巴比火车更直达，终点离老城很近；具体班次出发前在售票处确认</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚌 大巴约 1.5 小时</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-26T10:30:00+01:00">10:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Piazza%20del%20Campo%20Siena" target="_blank" rel="noopener">坎波广场与锡耶纳大教堂</a> <span class="tag tk">🎫 需提前订</span><small>贝壳形的中世纪广场，大教堂地板镶嵌画很出名；大教堂门票建议提前买</small></div></div>
+<div class="tl"><span class="t" data-iso="2026-11-26T16:30:00+01:00">16:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Siena%20bus%20station%20Piazza%20Gramsci" target="_blank" rel="noopener">锡耶纳 → 佛罗伦萨（大巴）</a> <small>傍晚回程，晚饭回佛罗伦萨吃</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜3 · 佛罗伦萨酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.27</span><span class="w">周五</span></div><div style="flex:1"><div class="day-title">穹顶与河对岸</div><div class="day-route">步行 · 老城区与 Oltrarno</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Brunelleschi+Dome+Florence&daddr=Piazza+Santo+Spirito+Florence+to:Palazzo+Pitti+Florence&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 3 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Brunelleschi%20Dome%20Florence&destination=Palazzo%20Pitti%20Florence&waypoints=Piazza%20Santo%20Spirito%20Florence" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-27T09:00:00+01:00">09:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Brunelleschi%20Dome%20Florence" target="_blank" rel="noopener">登百花大教堂穹顶</a><button class="info-btn" type="button" data-target="info-dome" aria-expanded="false" aria-label="登百花大教堂穹顶简介">ⓘ</button> <span class="tag tk">🎫 需提前订</span><small>佛罗伦萨最值得爬的一处，爬完能近看穹顶内部壁画；需预约时段</small><div class="info-panel" id="info-dome" hidden><p>布鲁内莱斯基设计的穹顶于1436年完工，当时是世界上最大的砖石穹顶。登顶要爬约463级台阶，通道狭窄，需要提前预约时段。</p></div></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 20 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-27T12:30:00+01:00">12:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Piazza%20Santo%20Spirito%20Florence" target="_blank" rel="noopener">Oltrarno 午餐</a> <small>河对岸本地人多、价格更实在，圣灵广场周边小馆集中</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 10 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-27T14:30:00+01:00">14:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Palazzo%20Pitti%20Florence" target="_blank" rel="noopener">碧提宫与波波里花园</a> <span class="tag star">⭐ 值得去</span><small>美第奇家族的宫殿，后面的花园适合慢逛，天气不好可只看宫内</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜4 · 佛罗伦萨酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.28</span><span class="w">周六</span></div><div style="flex:1"><div class="day-title">高铁去罗马</div><div class="day-route">高铁 + 步行</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Firenze+Santa+Maria+Novella+train+station&daddr=Colosseum+Rome+to:Trevi+Fountain+Rome+to:Pantheon+Rome&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 4 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&origin=Firenze%20Santa%20Maria%20Novella%20train%20station&destination=Pantheon%20Rome&waypoints=Colosseum%20Rome%7CTrevi%20Fountain%20Rome" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-28T09:30:00+01:00">09:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Firenze%20Santa%20Maria%20Novella%20train%20station" target="_blank" rel="noopener">佛罗伦萨 SMN → 罗马 Termini（高铁）</a> <span class="tag tk">🎫 需提前订</span><small>高铁约 1.5 小时，具体车次要等车票确认；上午的车更稳，留出罢工或晚点的余量</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚆 高铁约 1.5 小时</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-28T14:30:00+01:00">14:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Colosseum%20Rome" target="_blank" rel="noopener">斗兽场与古罗马广场</a><button class="info-btn" type="button" data-target="info-colo" aria-expanded="false" aria-label="斗兽场与古罗马广场简介">ⓘ</button> <span class="tag tk">🎫 需提前订</span><small>先放行李再去，订 14:00 之后的时段比较从容；联票可以顺路看古罗马广场</small><div class="info-panel" id="info-colo" hidden><p>斗兽场约公元80年启用，是罗马帝国最大的圆形竞技场。门票通常与古罗马广场、帕拉蒂尼山联票，按时段入场。</p></div></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 20 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-28T17:30:00+01:00">17:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%20Rome" target="_blank" rel="noopener">特雷维喷泉</a> <span class="tag star">⭐ 值得去</span><small>傍晚人多，小心扒手；夜里灯亮起来更好看</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 8 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-28T19:00:00+01:00">19:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Pantheon%20Rome" target="_blank" rel="noopener">万神殿周边晚餐</a> <small>步行可达，万神殿周边餐馆多，选没有站街揽客的</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜5 · 罗马酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.29</span><span class="w">周日</span></div><div style="flex:1"><div class="day-title">博尔盖塞与特拉斯提弗列</div><div class="day-route">步行 + 地铁</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Galleria+Borghese+Rome&daddr=Spanish+Steps+Rome+to:Trastevere+Rome&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 3 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&origin=Galleria%20Borghese%20Rome&destination=Trastevere%20Rome&waypoints=Spanish%20Steps%20Rome" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-29T09:00:00+01:00">09:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Galleria%20Borghese%20Rome" target="_blank" rel="noopener">博尔盖塞美术馆</a><button class="info-btn" type="button" data-target="info-borg" aria-expanded="false" aria-label="博尔盖塞美术馆简介">ⓘ</button> <span class="tag tk">🎫 需提前订</span><small>按时段限流，门票通常早早卖光，需提前订；周一闭馆，所以排在今天</small><div class="info-panel" id="info-borg" hidden><p>博尔盖塞美术馆收藏贝尔尼尼的《阿波罗与达芙妮》等雕塑，实行约两小时一场的限流时段制，必须预约。</p></div></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 25 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-29T13:00:00+01:00">13:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Spanish%20Steps%20Rome" target="_blank" rel="noopener">西班牙台阶</a> <span class="tag star">⭐ 值得去</span><small>台阶上不能坐，拍照即可；附近有午餐选择</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚌 公交或打车约 20 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-29T16:00:00+01:00">16:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Trastevere%20Rome" target="_blank" rel="noopener">特拉斯提弗列漫步与晚餐</a> <span class="tag star">⭐ 值得去</span><small>石板路小巷与小馆，罗马本地味最浓的街区，晚饭放在这里</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜6 · 罗马酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">11.30</span><span class="w">周一</span></div><div style="flex:1"><div class="day-title">梵蒂冈</div><div class="day-route">地铁 + 步行</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Vatican+Museums&daddr=St.+Peter%27s+Basilica+Vatican+to:Castel+Sant%27Angelo+Rome&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 3 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&origin=Vatican%20Museums&destination=Castel%20Sant%27Angelo%20Rome&waypoints=St.%20Peter%27s%20Basilica%20Vatican" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-11-30T08:30:00+01:00">08:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Vatican%20Museums" target="_blank" rel="noopener">梵蒂冈博物馆（含西斯廷礼拜堂）</a><button class="info-btn" type="button" data-target="info-vat" aria-expanded="false" aria-label="梵蒂冈博物馆（含西斯廷礼拜堂）简介">ⓘ</button> <span class="tag tk">🎫 需提前订</span><small>今天周一正常开放；避开了 11/29 当月最后一个周日的免费日大排队，需订时段票</small><div class="info-panel" id="info-vat" hidden><p>梵蒂冈博物馆的西斯廷礼拜堂天顶画由米开朗基罗在1508到1512年间绘制。馆内参观路线很长，建议留足3小时以上。</p></div></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 15 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-30T12:30:00+01:00">12:30</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=St.%20Peter%27s%20Basilica%20Vatican" target="_blank" rel="noopener">圣彼得大教堂</a> <span class="tag star">⭐ 值得去</span><small>免费进入但要过安检，常排队；需遮肩遮膝</small></div></div>
+<div class="tl-gap"><span class="gt"></span><span class="chip">🚶 步行约 10 分钟</span></div>
+<div class="tl"><span class="t" data-iso="2026-11-30T16:00:00+01:00">16:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Castel%20Sant%27Angelo%20Rome" target="_blank" rel="noopener">圣天使城堡</a> <span class="tag star">⭐ 值得去</span><small>登顶可以看到圣彼得大教堂和台伯河的日落</small></div></div>
+<div class="tl hotel"><span class="t">🏨</span><div class="tx"><b>夜7 · 罗马酒店（待定）</b><span class="sub">订好后发截图，这里补上酒店名称和地址</span></div></div>
+</div></div>
+<div class="card day"><div class="day-head"><div class="day-num"><span class="d">12.01</span><span class="w">周二</span></div><div style="flex:1"><div class="day-title">返程</div><div class="day-route">视航班而定</div></div><span class="day-toggle" aria-hidden="true">▾</span></div>
+<div class="daymap"><div class="daymap-bar"><button class="dm-toggle" type="button" data-src="https://maps.google.com/maps?saddr=Piazza+del+Campidoglio+Rome&daddr=Fiumicino+Airport+Rome&output=embed">🗺️ 展开今日路线地图</button><span class="dm-note">共 2 站</span><a class="dm-go" href="https://www.google.com/maps/dir/?api=1&travelmode=transit&origin=Piazza%20del%20Campidoglio%20Rome&destination=Fiumicino%20Airport%20Rome" target="_blank" rel="noopener">全天多点导航 ↗</a></div><div class="dm-frame"></div></div>
+<div class="day-body">
+<div class="tl"><span class="t" data-iso="2026-12-01T09:00:00+01:00">09:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Piazza%20del%20Campidoglio%20Rome" target="_blank" rel="noopener">卡比托利欧广场（机动）</a> <small>米开朗基罗设计的广场，时间不够就跳过；返程航班时间未定，先留空</small></div></div>
+<div class="tl"><span class="t" data-iso="2026-12-01T11:00:00+01:00">11:00</span><div class="tx"><a class="pin" href="https://www.google.com/maps/search/?api=1&query=Fiumicino%20Airport%20Rome" target="_blank" rel="noopener">前往菲乌米奇诺机场</a> <small>出发时间等航班确认后倒推；机场快线从 Termini 出发约 32 分钟</small></div></div>
+</div></div>
 
-<h2>需要注意的冲突与风险</h2>
-<div class="card risk"><b>11/29 是当月最后一个周日</b>梵蒂冈博物馆当天免费但队伍极长，我已把它排在周一（11/30，正常开放）。</div>
-<div class="card risk"><b>周一博尔盖塞美术馆闭馆</b>所以排在周日；同理，周一不要再安排其他国立博物馆，先查开放日。</div>
-<div class="card risk"><b>周六 11/28 一天赶路加斗兽场</b>如果到罗马已是下午，斗兽场可能只剩一个时段，请订票时选 14:00 之后。</div>
-<div class="card risk"><b>11/24 抵达时间和 12/1 返程时间都未确认</b>请尽快发机票截图，我会据此调整第一天和最后一天，并确认是否来得及。</div>
-<div class="card risk"><b>意大利铁路罢工常见</b>11/28 的高铁是硬性节点，前一晚务必查 Trenitalia 的罢工公告。</div>
+  </section>
 
-<h2>待办清单</h2>
-<ul>
-<li>预订学院美术馆和乌菲兹（11/25）</li>
-<li>预订百花大教堂穹顶（11/27）</li>
-<li>预订佛罗伦萨→罗马高铁（11/28）</li>
-<li>预订斗兽场/古罗马广场（11/28 下午）</li>
-<li>预订博尔盖塞美术馆（11/29 上午）</li>
-<li>预订梵蒂冈博物馆（11/30 上午）</li>
-<li>确认锡耶纳大巴时刻，需要的话预订大教堂门票（11/26）</li>
-<li>确认两晚酒店并发来截图</li>
-<li>确认往返航班并发来截图</li>
-<li>办理旅行保险</li>
-<li>下载 Google 地图的佛罗伦萨、锡耶纳、罗马离线地图</li>
-</ul>
+  <section id="todo">
+    <h2 class="sec">✅ 待办清单</h2>
+    <div class="card"><ul class="todo-list"><li>预订学院美术馆（11/25 上午）和乌菲兹美术馆（11/25 下午）</li><li>预订百花大教堂穹顶时段（11/27 上午）</li><li>预订佛罗伦萨到罗马的高铁（11/28 上午）</li><li>预订斗兽场与古罗马广场联票（11/28 下午）</li><li>预订博尔盖塞美术馆（11/29 上午）</li><li>预订梵蒂冈博物馆（11/30 上午）</li><li>确认锡耶纳大巴班次，需要的话订大教堂门票（11/26）</li><li>确认往返机票与酒店，并补进页面</li><li>办理旅行保险</li><li>下载佛罗伦萨、锡耶纳、罗马的 Google 离线地图</li></ul></div>
+  </section>
 
-<h2>实用贴士</h2>
-<ul>
-<li>11月底气温约 5–14°C，多雨，带折叠伞和可叠穿外套；石板路选防滑鞋。</li>
-<li>教堂（含圣彼得大教堂）要求遮肩遮膝。</li>
-<li>老城区多为限行区（ZTL），自驾违规会收到罚单，建议全程步行和火车。</li>
-<li>火车票上车前必须在站台黄色机器打码（电子票除外）；意大利铁路罢工多见，出发前一晚查 Trenitalia 官网。</li>
-<li>小心扒手：罗马地铁、特雷维喷泉、火车站最集中。</li>
-<li>欧盟电压 230V，插头为两脚圆头，需转换插头。</li>
-<li>餐厅常收座位费（coperto），在账单上属正常项目。</li>
-<li>紧急电话 112。</li>
-</ul>
-</main>
+  <section id="tips">
+    <h2 class="sec">💡 贴士</h2>
+    <div class="card">
+      <ul class="tips"><li><b>天气：</b>11月底约 5–14°C，多雨，带折叠伞与可叠穿外套；石板路穿防滑鞋。</li><li><b>穿着：</b>教堂（含圣彼得大教堂）要求遮肩遮膝。</li><li><b>交通：</b>老城区多为限行区（ZTL），建议全程步行加火车；火车票上车前要在站台打码（电子票除外）。</li><li><b>罢工：</b>意大利铁路罢工常见，11/28 的高铁前一晚查 Trenitalia 公告。</li><li><b>治安：</b>罗马地铁、特雷维喷泉、火车站扒手最多，背包放身前。</li><li><b>闭馆日：</b>博尔盖塞美术馆周一闭馆，其他国立博物馆请出发前查开放日。</li><li><b>小费与座位费：</b>餐厅账单上的 coperto 是座位费，属正常项目。</li><li><b>插头与急救：</b>欧标两脚圆头插头，230V；紧急电话 112。</li><li><b>分享提醒：</b>这份行程链接谁都能打开，不想被看到的内容请自己删掉。</li></ul>
+    </div>
+  </section>
+
+  <footer>Travel Book · 意大利佛罗伦萨与罗马 · 2026.11.24–12.01</footer>
+</div>
+
 <script>
-const COL=['--d1','--d2','--d3','--d4','--d5','--d6','--d7','--d8'];
-const G=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
-const R=(s,m)=>'https://www.google.com/maps/dir/?api=1&travelmode='+m+'&origin='+encodeURIComponent(s[0])+'&destination='+encodeURIComponent(s[s.length-1])+(s.length>2?'&waypoints='+encodeURIComponent(s.slice(1,-1).join('|')):'');
-/* t: 带时区的ISO时间；place: 地图搜索词；book: 需提前订票 */
-const DAYS=[
-{d:'11月24日 周二',h:'抵达佛罗伦萨',m:'walking',s:[
-{t:'2026-11-24T15:00:00+01:00',n:'入住酒店，放行李',p:'Firenze Santa Maria Novella train station',x:'抵达时间待机票截图，这里先按下午估计。'},
-{t:'2026-11-24T17:30:00+01:00',n:'老桥与阿诺河畔散步',p:'Ponte Vecchio Florence'},
-{t:'2026-11-24T19:30:00+01:00',n:'晚餐：Mercato Centrale 美食广场',p:'Mercato Centrale Firenze',x:'选择多，适合刚到的疲惫状态。'}]},
-{d:'11月25日 周三',h:'佛罗伦萨艺术日',m:'walking',s:[
-{t:'2026-11-25T08:30:00+01:00',n:'学院美术馆（大卫像）',p:'Galleria dell\'Accademia Florence',b:1},
-{t:'2026-11-25T11:00:00+01:00',n:'圣母百花大教堂与广场',p:'Piazza del Duomo Florence'},
-{t:'2026-11-25T14:00:00+01:00',n:'乌菲兹美术馆',p:'Uffizi Gallery Florence',b:1},
-{t:'2026-11-25T17:00:00+01:00',n:'米开朗基罗广场看日落',p:'Piazzale Michelangelo Florence',x:'日落约 16:45，建议提早到。'}]},
-{d:'11月26日 周四',h:'锡耶纳一日游',m:'transit',s:[
-{t:'2026-11-26T08:30:00+01:00',n:'佛罗伦萨 → 锡耶纳（大巴）',p:'Autostazione Firenze Busitalia',x:'约1.5小时，大巴比火车更直达。'},
-{t:'2026-11-26T10:30:00+01:00',n:'坎波广场与锡耶纳大教堂',p:'Piazza del Campo Siena',b:1,x:'大教堂门票建议提前买。'},
-{t:'2026-11-26T16:30:00+01:00',n:'锡耶纳 → 佛罗伦萨（大巴）',p:'Siena bus station Piazza Gramsci'}]},
-{d:'11月27日 周五',h:'穹顶与河对岸',m:'walking',s:[
-{t:'2026-11-27T09:00:00+01:00',n:'登百花大教堂穹顶',p:'Brunelleschi Dome Florence',b:1},
-{t:'2026-11-27T12:30:00+01:00',n:'午餐：Oltrarno 小馆',p:'Santo Spirito Florence'},
-{t:'2026-11-27T14:30:00+01:00',n:'碧提宫与波波里花园',p:'Palazzo Pitti Florence'}]},
-{d:'11月28日 周六',h:'高铁去罗马',m:'transit',s:[
-{t:'2026-11-28T09:30:00+01:00',n:'新圣母玛利亚火车站 → 罗马特米尼',p:'Firenze Santa Maria Novella train station',b:1,x:'约1.5小时。具体车次待车票截图。'},
-{t:'2026-11-28T13:30:00+01:00',n:'斗兽场与古罗马广场',p:'Colosseum Rome',b:1},
-{t:'2026-11-28T17:30:00+01:00',n:'特雷维喷泉',p:'Trevi Fountain Rome'},
-{t:'2026-11-28T19:00:00+01:00',n:'万神殿周边晚餐',p:'Pantheon Rome'}]},
-{d:'11月29日 周日',h:'博尔盖塞与特拉斯提弗列',m:'transit',s:[
-{t:'2026-11-29T09:00:00+01:00',n:'博尔盖塞美术馆',p:'Galleria Borghese Rome',b:1,x:'必须预约，按时段限流。'},
-{t:'2026-11-29T13:00:00+01:00',n:'西班牙台阶',p:'Spanish Steps Rome'},
-{t:'2026-11-29T16:00:00+01:00',n:'特拉斯提弗列漫步与晚餐',p:'Trastevere Rome'}]},
-{d:'11月30日 周一',h:'梵蒂冈',m:'transit',s:[
-{t:'2026-11-30T08:30:00+01:00',n:'梵蒂冈博物馆（含西斯廷礼拜堂）',p:'Vatican Museums',b:1},
-{t:'2026-11-30T12:30:00+01:00',n:'圣彼得大教堂',p:'St. Peter\'s Basilica Vatican'},
-{t:'2026-11-30T16:00:00+01:00',n:'圣天使城堡',p:'Castel Sant\'Angelo Rome'}]},
-{d:'12月1日 周二',h:'返程',m:'transit',s:[
-{t:'2026-12-01T09:00:00+01:00',n:'卡比托利欧广场（机动，视航班而定）',p:'Piazza del Campidoglio Rome',x:'返程航班时间待确认。'},
-{t:'2026-12-01T11:00:00+01:00',n:'前往机场',p:'Fiumicino Airport Rome',x:'出发时间会按航班倒推。'}]}];
-const BOOKINGS=[]; /* 收到截图后在此处添加：{kind,title,t,tz,addr,p} */
-const ROME='Europe/Rome',pad=n=>String(n).padStart(2,'0');
-function tm(iso,tz){const d=new Date(iso),o={hour:'2-digit',minute:'2-digit',hour12:false};
- const a=d.toLocaleTimeString('zh-CN',{...o,timeZone:tz||ROME});
- const mine=Intl.DateTimeFormat().resolvedOptions().timeZone;
- let b='';if(mine!==(tz||ROME)){const l=d.toLocaleTimeString('zh-CN',o);if(l!==a)b='你的时间 '+l}
- return '<div class="t">'+a+'<em>意大利'+(b?'<br>'+b:'')+'</em></div>'}
-const $=id=>document.getElementById(id);
-$('bk').innerHTML=BOOKINGS.length?BOOKINGS.map(b=>'<div class="card"><small>'+b.kind+'</small><b>'+b.title+'</b>'+tm(b.t,b.tz)+'<a href="'+G(b.p||b.addr)+'">'+b.addr+'</a></div>').join(''):'<p class="empty">机票、酒店、门票、火车票的截图发来后，这里会列出时间与地址。</p>';
-function dm(day,c){const s=day.s,w=300,h=40+s.length*52;let p='';
- s.forEach((x,i)=>{const cx=i%2?200:90,cy=36+i*52;x.cx=cx;x.cy=cy});
- let path='M'+s.map(x=>x.cx+' '+x.cy).join(' S ').replace(/ S /g,' L ');
- p+='<path d="'+path+'" fill="none" stroke="var('+c+')" stroke-width="4" stroke-dasharray="8 6" stroke-linecap="round" filter="url(#w)"/>';
- s.forEach((x,i)=>p+='<a href="'+G(x.p)+'"><circle cx="'+x.cx+'" cy="'+x.cy+'" r="13" fill="var(--paper)" stroke="var('+c+')" stroke-width="3"/><text x="'+x.cx+'" y="'+(x.cy+5)+'" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">'+(i+1)+'</text><text x="'+(x.cx+(i%2?-20:20))+'" y="'+(x.cy+4)+'" text-anchor="'+(i%2?'end':'start')+'" font-size="12" fill="var(--ink)" class="hand">'+x.n.replace(/（.*/,'').slice(0,12)+'</text></a>');
- return '<svg viewBox="0 0 '+w+' '+h+'" role="img" aria-label="当日路线">'+p+'</svg>'}
-$('days').innerHTML=DAYS.map((d,i)=>{const c=COL[i];
- return '<section class="day" style="--c:var('+c+')"><header><h3>'+d.d+' · '+d.h+'</h3></header>'+
- '<details><summary>展开当日路线</summary><div class="dm">'+dm(d,c)+'<a class="go" href="'+R(d.s.map(x=>x.p),d.m)+'">一键导航全天路线</a></div></details>'+
- d.s.map(x=>'<div class="row">'+tm(x.t)+'<div><a href="'+G(x.p)+'">'+x.n+'</a>'+(x.b?'<span class="book">需提前订</span>':'')+(x.x?'<p>'+x.x+'</p>':'')+'</div></div>').join('')+'</section>'}).join('');
-document.querySelector('.map svg').insertAdjacentHTML('afterbegin','');
-if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-</script></body></html>
+(function(){
+  document.querySelectorAll('.dm-toggle').forEach(function(btn){btn.addEventListener('click',function(){
+    var f=btn.closest('.daymap').querySelector('.dm-frame');
+    if(f.querySelector('iframe')){f.innerHTML='';return;}
+    var i=document.createElement('iframe');i.src=btn.dataset.src;i.loading='lazy';f.innerHTML='';f.appendChild(i);});});
+  document.querySelectorAll('.info-btn').forEach(function(btn){btn.addEventListener('click',function(){
+    var p=document.getElementById(btn.dataset.target);if(!p)return;var o=p.hasAttribute('hidden');
+    if(o)p.removeAttribute('hidden');else p.setAttribute('hidden','');btn.setAttribute('aria-expanded',o?'true':'false');});});
+  document.querySelectorAll('.card.day .day-head').forEach(function(h){h.addEventListener('click',function(){h.closest('.card.day').classList.toggle('collapsed');});});
+  /* 时间：左侧为意大利时间；查看者时区不同时追加本地时间 */
+  var ROME='Europe/Rome',mine='';try{mine=Intl.DateTimeFormat().resolvedOptions().timeZone;}catch(e){}
+  var o={hour:'2-digit',minute:'2-digit',hour12:false};
+  document.querySelectorAll('.t[data-iso]').forEach(function(el){
+    var d=new Date(el.dataset.iso),a=d.toLocaleTimeString('zh-CN',Object.assign({timeZone:ROME},o));
+    var h=a+'<small class="tz">意大利时间</small>';
+    if(mine&&mine!==ROME){var l=d.toLocaleTimeString('zh-CN',o);var dd=d.toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'});h+='<small class="tz">你的时间 '+dd+' '+l+'</small>';}
+    el.innerHTML=h;});
+  var EVENTS=[{t:'2026-11-24T15:00:00+01:00', title:'入住酒店，放行李', meta:'11/24 周二 · 抵达佛罗伦萨'},
+    {t:'2026-11-24T17:30:00+01:00', title:'老桥与阿诺河畔', meta:'11/24 周二 · 抵达佛罗伦萨'},
+    {t:'2026-11-24T19:30:00+01:00', title:'Mercato Centrale 晚餐', meta:'11/24 周二 · 抵达佛罗伦萨'},
+    {t:'2026-11-25T08:30:00+01:00', title:'学院美术馆（大卫像）', meta:'11/25 周三 · 佛罗伦萨艺术日'},
+    {t:'2026-11-25T11:00:00+01:00', title:'圣母百花大教堂与广场', meta:'11/25 周三 · 佛罗伦萨艺术日'},
+    {t:'2026-11-25T14:00:00+01:00', title:'乌菲兹美术馆', meta:'11/25 周三 · 佛罗伦萨艺术日'},
+    {t:'2026-11-25T17:00:00+01:00', title:'米开朗基罗广场看日落', meta:'11/25 周三 · 佛罗伦萨艺术日'},
+    {t:'2026-11-26T08:30:00+01:00', title:'佛罗伦萨 → 锡耶纳（大巴）', meta:'11/26 周四 · 锡耶纳一日游'},
+    {t:'2026-11-26T10:30:00+01:00', title:'坎波广场与锡耶纳大教堂', meta:'11/26 周四 · 锡耶纳一日游'},
+    {t:'2026-11-26T16:30:00+01:00', title:'锡耶纳 → 佛罗伦萨（大巴）', meta:'11/26 周四 · 锡耶纳一日游'},
+    {t:'2026-11-27T09:00:00+01:00', title:'登百花大教堂穹顶', meta:'11/27 周五 · 穹顶与河对岸'},
+    {t:'2026-11-27T12:30:00+01:00', title:'Oltrarno 午餐', meta:'11/27 周五 · 穹顶与河对岸'},
+    {t:'2026-11-27T14:30:00+01:00', title:'碧提宫与波波里花园', meta:'11/27 周五 · 穹顶与河对岸'},
+    {t:'2026-11-28T09:30:00+01:00', title:'佛罗伦萨 SMN → 罗马 Termini（高铁）', meta:'11/28 周六 · 高铁去罗马'},
+    {t:'2026-11-28T14:30:00+01:00', title:'斗兽场与古罗马广场', meta:'11/28 周六 · 高铁去罗马'},
+    {t:'2026-11-28T17:30:00+01:00', title:'特雷维喷泉', meta:'11/28 周六 · 高铁去罗马'},
+    {t:'2026-11-28T19:00:00+01:00', title:'万神殿周边晚餐', meta:'11/28 周六 · 高铁去罗马'},
+    {t:'2026-11-29T09:00:00+01:00', title:'博尔盖塞美术馆', meta:'11/29 周日 · 博尔盖塞与特拉斯提弗列'},
+    {t:'2026-11-29T13:00:00+01:00', title:'西班牙台阶', meta:'11/29 周日 · 博尔盖塞与特拉斯提弗列'},
+    {t:'2026-11-29T16:00:00+01:00', title:'特拉斯提弗列漫步与晚餐', meta:'11/29 周日 · 博尔盖塞与特拉斯提弗列'},
+    {t:'2026-11-30T08:30:00+01:00', title:'梵蒂冈博物馆（含西斯廷礼拜堂）', meta:'11/30 周一 · 梵蒂冈'},
+    {t:'2026-11-30T12:30:00+01:00', title:'圣彼得大教堂', meta:'11/30 周一 · 梵蒂冈'},
+    {t:'2026-11-30T16:00:00+01:00', title:'圣天使城堡', meta:'11/30 周一 · 梵蒂冈'},
+    {t:'2026-12-01T09:00:00+01:00', title:'卡比托利欧广场（机动）', meta:'12/01 周二 · 返程'},
+    {t:'2026-12-01T11:00:00+01:00', title:'前往菲乌米奇诺机场', meta:'12/01 周二 · 返程'}];
+  function pad(n){return String(n).padStart(2,'0');}
+  function tick(){
+    var now=Date.now(),ev=null;
+    for(var i=0;i<EVENTS.length;i++){if(new Date(EVENTS[i].t).getTime()>now){ev=EVENTS[i];break;}}
+    if(!ev){document.getElementById('nowTitle').textContent='旅程已结束';document.getElementById('nowMeta').textContent='期待下一次出发';document.getElementById('nowCd').textContent='🎉';return;}
+    document.getElementById('nowTitle').textContent=ev.title;document.getElementById('nowMeta').textContent=ev.meta||'';
+    var s=Math.floor(Math.max(0,new Date(ev.t).getTime()-now)/1000),d=Math.floor(s/86400);s-=d*86400;
+    var h=Math.floor(s/3600);s-=h*3600;var m=Math.floor(s/60);s-=m*60;
+    document.getElementById('nowCd').textContent=(d>0?d+'天 ':'')+pad(h)+':'+pad(m)+':'+pad(s)+' 后';}
+  tick();setInterval(tick,1000);
+  if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});
+})();
+</script>
+</body>
+</html>
